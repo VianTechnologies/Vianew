@@ -12,9 +12,9 @@ const Stats = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-white py-20 border-b border-gray-100">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -22,12 +22,12 @@ const Stats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="text-center"
+              className="text-center px-4"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-gray-500 font-medium tracking-wide uppercase text-sm">{stat.label}</div>
             </motion.div>
           ))}
         </div>

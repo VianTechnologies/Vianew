@@ -2,142 +2,151 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FiArrowRight, FiDatabase, FiTrendingUp, FiShield } from 'react-icons/fi';
+import { FiArrowRight, FiDatabase, FiTrendingUp, FiShield, FiCheck } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gray-50 text-gray-800 overflow-hidden min-h-screen flex items-center">
-      {/* Modern Grid Pattern Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23374151' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+    <section className="relative bg-white overflow-hidden min-h-[90vh] flex items-center">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-primary-200/40 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-accent-100/40 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03]"></div>
       </div>
-      
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-primary-50/30"></div>
 
-      <div className="container relative py-20 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 py-20 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 leading-tight text-gray-900">
-              Delivering value via{' '}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1.2,
-                  delay: 1.5,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 12
-                }}
-                className="bg-gradient-to-r from-primary-400 to-accent-400 text-white px-2 py-1 rounded-lg inline-block"
-              >
-                new path
-              </motion.span>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="inline-flex items-center space-x-2 bg-primary-50 border border-primary-100 text-primary-700 px-4 py-2 rounded-full mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+              </span>
+              <span className="text-sm font-semibold tracking-wide uppercase">Reimagining Business Process</span>
+            </div>
+
+            <h1 className="text-6xl md:text-7xl font-serif font-bold mb-6 text-gray-900 leading-[1.1] tracking-tight">
+              Delivering value <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">
+                via new path
+              </span>
             </h1>
-            <p className="text-xl text-gray-700 mb-8 font-light">
-              Data driven and AI embedded in process workflows. Transform your business with intelligent automation 
-              and strategic data solutions that deliver measurable growth.
+
+            <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
+              Embed AI directly into your process workflows. We help data-rich enterprises transform through intelligent automation and strategic innovation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="bg-gray-900 text-white px-8 py-4 rounded-sm font-semibold hover:bg-gray-800 transition-colors inline-flex items-center justify-center">
-                Talk to us
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link href="/contact" className="btn-primary group">
+                Start your transformation
+                <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/resources" className="border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-sm font-semibold hover:border-gray-400 transition-colors">
-                Explore Resources
+              <Link href="/services" className="btn-secondary">
+                View our solutions
               </Link>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-12 flex flex-wrap gap-6">
-              <div className="flex items-center space-x-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full">
-                <FiShield className="text-accent-600" size={20} />
-                <span className="text-sm text-gray-700">AI-Powered Solutions</span>
+            {/* Trust Indicators / Stats */}
+            <div className="grid grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+              <div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">40%</div>
+                <div className="text-sm text-gray-500 font-medium">Efficiency Gain</div>
               </div>
-              <div className="flex items-center space-x-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full">
-                <FiDatabase className="text-primary-600" size={20} />
-                <span className="text-sm text-gray-700">Process Automation</span>
+              <div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">2x</div>
+                <div className="text-sm text-gray-500 font-medium">Faster Delivery</div>
               </div>
-              <div className="flex items-center space-x-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full">
-                <FiTrendingUp className="text-rose-500" size={20} />
-                <span className="text-sm text-gray-700">Data-Driven Growth</span>
+              <div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">100%</div>
+                <div className="text-sm text-gray-500 font-medium">Compliance</div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Content - Professional Business Imagery */}
+          {/* Right Content - Visual Representation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:block"
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative hidden lg:block"
           >
-            <div className="grid grid-cols-3 gap-4 h-96">
-              {/* Left Image - Business Meeting */}
-              <motion.div
-                initial={{ opacity: 0, translateX: -20 }}
-                animate={{ opacity: 1, translateX: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-                    <div className="text-gray-600 font-medium">Strategic Planning</div>
+            {/* Main Glass Card */}
+            <div className="relative z-10 glass rounded-3xl p-8 border border-white/50 bg-white/40 backdrop-blur-xl shadow-2xl">
+              {/* Abstract UI Mockup */}
+              <div className="space-y-6">
+                {/* Header Mockup */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex space-x-4">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
                   </div>
+                  <div className="h-2 w-20 bg-gray-200 rounded-full"></div>
                 </div>
-              </motion.div>
 
-              {/* Right Image - Data Analysis */}
-              <motion.div
-                initial={{ opacity: 0, translateX: 20 }}
-                animate={{ opacity: 1, translateX: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                    </div>
-                    <div className="text-gray-600 font-medium">Data Insights</div>
-                  </div>
+                {/* Content Rows */}
+                <div className="space-y-4">
+                  {[1, 2, 3].map((i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ x: 20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 + (i * 0.1) }}
+                      className="flex items-center p-4 bg-white/60 rounded-xl shadow-sm border border-white/60"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-100 to-accent-100 flex items-center justify-center text-primary-600">
+                        {i === 1 && <FiDatabase size={18} />}
+                        {i === 2 && <FiTrendingUp size={18} />}
+                        {i === 3 && <FiShield size={18} />}
+                      </div>
+                      <div className="ml-4 flex-1">
+                        <div className="h-2.5 w-1/3 bg-gray-800 rounded-full mb-2 opacity-10"></div>
+                        <div className="h-2 w-1/2 bg-gray-400 rounded-full opacity-10"></div>
+                      </div>
+                      <div className="h-6 w-16 bg-green-100 text-green-700 text-xs font-medium rounded-full flex items-center justify-center">
+                        Active
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              </motion.div>
 
-              {/* Center Image - Business Growth */}
-              <motion.div
-                initial={{ opacity: 0, translateY: 20 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-rose-100 to-rose-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-gray-600 font-medium">Growth Strategy</div>
+                {/* Graph Area */}
+                <div className="mt-8 p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100">
+                  <div className="flex justify-between items-end h-32 space-x-2">
+                    {[40, 65, 45, 80, 55, 90, 75].map((h, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ height: 0 }}
+                        animate={{ height: `${h}%` }}
+                        transition={{ delay: 1 + (i * 0.05), duration: 0.5 }}
+                        className="w-full bg-gradient-to-t from-primary-400 to-primary-300 rounded-t-sm opacity-80"
+                      ></motion.div>
+                    ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
+
+            {/* Floating Elements */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-10 -right-10 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center space-x-3 border border-gray-50"
+            >
+              <div className="bg-green-100 p-2 rounded-full text-green-600">
+                <FiCheck size={20} />
+              </div>
+              <div>
+                <div className="text-xs text-gray-500 font-semibold uppercase">Optimization</div>
+                <div className="font-bold text-gray-900">+127%</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -12,33 +12,29 @@ const Services = () => {
       title: 'Data Governance',
       description: 'Establish robust frameworks for data quality, security, and compliance. Ensure your data assets are properly managed and protected.',
       href: '/services/data-governance',
-      color: 'bg-blue-500',
     },
     {
       icon: FiMap,
       title: 'Data Process Mapping',
       description: 'Visualize and optimize your data workflows. Identify bottlenecks and streamline operations for maximum efficiency.',
       href: '/services/process-mapping',
-      color: 'bg-purple-500',
     },
     {
       icon: FiLink,
       title: 'Data Integration',
       description: 'Seamlessly connect disparate data sources. Create a unified data ecosystem that powers your business intelligence.',
       href: '/services/data-integration',
-      color: 'bg-green-500',
     },
     {
       icon: FiBarChart2,
       title: 'Data Analytics',
       description: 'Transform raw data into actionable insights. Make data-driven decisions with advanced analytics and visualization.',
       href: '/services/data-analytics',
-      color: 'bg-orange-500',
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,10 +43,10 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle max-w-3xl mx-auto">
-            Comprehensive data management solutions tailored to your organization's needs. 
-            We provide end-to-end services to help you become truly data-driven.
+          <span className="section-subtitle">Our Expertise</span>
+          <h2 className="section-title">Comprehensive Data Solutions</h2>
+          <p className="max-w-3xl mx-auto text-xl text-gray-600 font-light">
+            We provide end-to-end services tailored to your organization's needs, helping you turn complex data challenges into business opportunities.
           </p>
         </motion.div>
 
@@ -62,15 +58,16 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="h-full"
             >
-              <Link href={service.href} className="block h-full">
-                <div className="card h-full flex flex-col hover:scale-105 transition-transform duration-300">
-                  <div className={`${service.color} w-14 h-14 rounded-lg flex items-center justify-center mb-4`}>
-                    <service.icon className="text-white" size={28} />
+              <Link href={service.href} className="block h-full group">
+                <div className="card h-full flex flex-col border border-gray-100 group-hover:border-primary-200 group-hover:shadow-lg transition-all duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-gray-50 group-hover:bg-primary-600 transition-colors duration-300 flex items-center justify-center mb-6">
+                    <service.icon className="text-gray-900 group-hover:text-white transition-colors duration-300" size={24} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
-                  <div className="flex items-center text-primary-600 font-semibold">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">{service.title}</h3>
+                  <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{service.description}</p>
+                  <div className="flex items-center text-primary-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
                     Learn More
                     <FiArrowRight className="ml-2" />
                   </div>

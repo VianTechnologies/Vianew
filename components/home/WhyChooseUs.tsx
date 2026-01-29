@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Why Choose DD Enterprise</h2>
+          <h2 className="section-title">Why Choose ViaNew</h2>
           <p className="section-subtitle max-w-3xl mx-auto">
             Partner with a trusted leader in data management and analytics. We deliver solutions that drive real business value.
           </p>
@@ -52,16 +52,16 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="flex space-x-4"
+              className="flex items-start space-x-6 p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary-100"
             >
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                  <benefit.icon className="text-primary-600" size={24} />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl flex items-center justify-center border border-primary-100 text-primary-600">
+                  <benefit.icon size={26} />
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-light">{benefit.description}</p>
               </div>
             </motion.div>
           ))}
