@@ -31,7 +31,7 @@ const Footer = () => {
               <span className="text-2xl font-serif font-bold text-white tracking-tight">ViaNew</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Delivering value via new path. We transform data-rich enterprises through intelligent automation and embedded AI solutions.
+              Architecting your AI-Ready Data Future. We provide expert blueprints, audits, and governance for the modern enterprise.
             </p>
             <div className="flex space-x-4 pt-2">
               {[FiLinkedin, FiTwitter, FiFacebook].map((Icon, i) => (
@@ -46,7 +46,7 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">Solutions</h3>
             <ul className="space-y-3">
-              {['Data Governance', 'Process Mapping', 'Data Integration', 'Advanced Analytics'].map((item) => (
+              {['Data Platform Blueprint', 'AI-Ready Data Audit', 'Governance Quickstart', 'Enterprise Architecture'].map((item) => (
                 <li key={item}>
                   <Link href="/services" className="text-gray-400 hover:text-primary-400 transition-colors text-sm">
                     {item}

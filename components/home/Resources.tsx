@@ -2,24 +2,24 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FiFileText, FiBook, FiArrowRight } from 'react-icons/fi';
+import { FiBookOpen, FiGrid, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Resources = () => {
   const resources = [
     {
-      icon: FiFileText,
-      title: 'Industry Reports',
-      description: 'Access our latest research and insights on data management trends and best practices.',
-      href: '/reports',
-      cta: 'Browse Reports',
+      icon: FiBookOpen,
+      title: 'Reference Architecture Lib',
+      description: 'Access our canonical models and architecture patterns library. The building blocks for your data governance.',
+      href: '/resources/architecture-library',
+      cta: 'Access Library',
     },
     {
-      icon: FiBook,
-      title: 'Expert Books',
-      description: 'Download comprehensive guides and e-books written by our data management experts.',
-      href: '/books',
-      cta: 'View Books',
+      icon: FiGrid,
+      title: 'Modularity Scorecard',
+      description: 'Download our dashboard framework for quantifying ERP and integration modularity. Perfect for CFO & CEO reporting.',
+      href: '/resources/modularity-scorecard',
+      cta: 'Download Tool',
     },
   ];
 
@@ -33,11 +33,10 @@ const Resources = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-subtitle">Insights</span>
-          <h2 className="section-title">Knowledge Resources</h2>
+          <span className="section-subtitle">Internal IP</span>
+          <h2 className="section-title">Frameworks & Tools</h2>
           <p className="max-w-3xl mx-auto text-xl text-gray-600 font-light">
-            Stay ahead with our curated collection of reports, books, and insights.
-            Access valuable knowledge to accelerate your data journey.
+            Leverage our proprietary assets to accelerate your architecture decisions and measure success.
           </p>
         </motion.div>
 

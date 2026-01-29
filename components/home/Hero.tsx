@@ -31,16 +31,26 @@ const Hero = () => {
               <span className="text-sm font-semibold tracking-wide uppercase">Reimagining Business Process</span>
             </div>
 
-            <h1 className="text-6xl md:text-7xl font-serif font-bold mb-6 text-gray-900 leading-[1.1] tracking-tight">
-              Delivering value <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500">
-                via new path
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-serif font-bold text-gray-900 leading-tight mb-8"
+            >
+              Architecting Your <br />
+              <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+                AI-Ready Data Future
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
-              Embed AI directly into your process workflows. We help data-rich enterprises transform through intelligent automation and strategic innovation.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl md:text-2xl text-gray-600 mb-10 font-light max-w-2xl mx-auto leading-relaxed"
+            >
+              We deliver Data Platform Blueprints, Governance Quickstarts, and AI Audits for the modern enterprise.
+            </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link href="/contact" className="btn-primary group">

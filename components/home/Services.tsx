@@ -2,34 +2,34 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FiShield, FiMap, FiLink, FiBarChart2, FiArrowRight } from 'react-icons/fi';
+import { FiLayers, FiCheckSquare, FiShield, FiCpu, FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Services = () => {
   const services = [
     {
+      icon: FiLayers,
+      title: 'Data Platform Blueprint',
+      description: 'End-state lakehouse architecture and integration patterns (Kafka, CDC, APIs) tailored for CIOs and Enterprise Architects.',
+      href: '/services/blueprint',
+    },
+    {
+      icon: FiCpu,
+      title: 'AI-Ready Data Audit',
+      description: 'Comprehensive assessment of data quality, lineage, and semantics to prepare your data for GenAI, RAG, and ML use cases.',
+      href: '/services/ai-audit',
+    },
+    {
       icon: FiShield,
-      title: 'Data Governance',
-      description: 'Establish robust frameworks for data quality, security, and compliance. Ensure your data assets are properly managed and protected.',
-      href: '/services/data-governance',
+      title: 'Governance Quickstart',
+      description: 'Lightweight governance foundations, policies, and operating models. An accelerator designed to restart stalled programs.',
+      href: '/services/governance',
     },
     {
-      icon: FiMap,
-      title: 'Data Process Mapping',
-      description: 'Visualize and optimize your data workflows. Identify bottlenecks and streamline operations for maximum efficiency.',
-      href: '/services/process-mapping',
-    },
-    {
-      icon: FiLink,
-      title: 'Data Integration',
-      description: 'Seamlessly connect disparate data sources. Create a unified data ecosystem that powers your business intelligence.',
-      href: '/services/data-integration',
-    },
-    {
-      icon: FiBarChart2,
-      title: 'Data Analytics',
-      description: 'Transform raw data into actionable insights. Make data-driven decisions with advanced analytics and visualization.',
-      href: '/services/data-analytics',
+      icon: FiCheckSquare,
+      title: 'Enterprise Architecture',
+      description: 'Strategic advisory for canonical data models, business capability mapping, and ERP transitions to composable architectures.',
+      href: '/services/architecture',
     },
   ];
 
@@ -43,10 +43,10 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-subtitle">Our Expertise</span>
-          <h2 className="section-title">Comprehensive Data Solutions</h2>
+          <span className="section-subtitle">Core Offerings</span>
+          <h2 className="section-title">Consulting & Architecture</h2>
           <p className="max-w-3xl mx-auto text-xl text-gray-600 font-light">
-            We provide end-to-end services tailored to your organization's needs, helping you turn complex data challenges into business opportunities.
+            Validated strategies to build your data cash engine. We provide the architectural backbone for your digital transformation.
           </p>
         </motion.div>
 

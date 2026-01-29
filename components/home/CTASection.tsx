@@ -20,11 +20,11 @@ const CTASection = () => {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
-            Ready to Navigate Your Data Transformation?
+            Ready to Architect Your Data Future?
           </h2>
           <p className="text-xl text-gray-300 mb-10 font-light">
-            Let's discuss how ViaNew can help you achieve precision in every data decision
-            and unlock measurable business value from your data assets.
+            Start with our AI-Ready Data Audit or let us design your Data Platform Blueprint.
+            Transform your enterprise with ViaNew.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/contact" className="btn-primary bg-white text-gray-900 hover:bg-gray-100 hover:text-primary-700 border-none inline-flex items-center justify-center min-w-[200px]">
