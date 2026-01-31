@@ -3,15 +3,15 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BookDownloadPopup from "@/components/BookDownloadPopup";
 
-const playfair = Playfair_Display({ 
+
+const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: '--font-playfair',
   display: 'swap',
 });
 
-const jakarta = Plus_Jakarta_Sans({ 
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: '--font-jakarta',
   display: 'swap',
@@ -36,7 +36,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <BookDownloadPopup />
+
       </body>
     </html>
   );

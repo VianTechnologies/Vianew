@@ -13,13 +13,13 @@ const WhyChooseUs = () => {
     },
     {
       icon: FiUsers,
-      title: 'Expert Team',
-      description: 'Our certified data professionals bring deep expertise across all aspects of data management and analytics.',
+      title: 'Senior-Level Expertise',
+      description: 'Direct access to over a decade of experience delivering critical data platforms and strategies for global multinational enterprises.',
     },
     {
       icon: FiAward,
-      title: 'Industry Recognition',
-      description: 'Award-winning solutions and methodologies recognized by leading industry analysts and organizations.',
+      title: 'Excellence in Delivery',
+      description: 'A reputation built on superior quality deliverables and unwavering dedication to client satisfaction.',
     },
     {
       icon: FiZap,

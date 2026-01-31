@@ -1,189 +1,175 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
-import { FiAward, FiUsers, FiTarget, FiHeart, FiArrowRight } from 'react-icons/fi';
+import { motion } from 'framer-motion';
+import { FiTarget, FiAward, FiUsers, FiHeart, FiCheckCircle, FiMapPin, FiBriefcase, FiCalendar } from 'react-icons/fi';
 
-export const metadata = {
-  title: 'About Us - Via New',
-  description: 'Learn about our mission to deliver value via new path with AI-powered data solutions and intelligent automation.',
-};
+const AboutPage = () => {
+  const corporateInfo = [
+    { label: 'Company Name', value: 'Vian Technologies ApS', icon: FiBriefcase },
+    { label: 'CVR Number', value: '45132293', icon: FiCheckCircle },
+    { label: 'Headquarters', value: 'Judithsvej 15, 2. sal. tv, 2900 Hellerup', icon: FiMapPin },
+    { label: 'Established', value: 'September 2024', icon: FiCalendar },
+  ];
 
-export default function AboutPage() {
   const values = [
     {
       icon: FiTarget,
-      title: 'Excellence',
-      description: 'We strive for excellence in every project, delivering solutions that exceed expectations.',
+      title: 'Precision',
+      description: 'We believe in exactitude. Our blueprints and audits are surgically precise, leaving no room for ambiguity.',
     },
     {
       icon: FiUsers,
       title: 'Partnership',
-      description: 'We work as true partners with our clients, invested in their long-term success.',
+      description: 'We don’t just advise; we co-create. Your success is the only metric that matters to our long-term growth.',
     },
     {
       icon: FiAward,
-      title: 'Innovation',
-      description: 'We embrace innovation and stay ahead of industry trends to provide cutting-edge solutions.',
+      title: 'Excellence',
+      description: 'We refuse to settle for "good enough". We aim for best-in-class architecture that stands the test of time.',
     },
     {
       icon: FiHeart,
       title: 'Integrity',
-      description: 'We operate with transparency, honesty, and ethical practices in all our engagements.',
-    },
-  ];
-
-  const team = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Chief Executive Officer',
-      bio: '20+ years in enterprise data management and digital transformation.',
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Chief Technology Officer',
-      bio: 'Former Principal Architect at Fortune 500 companies, expert in data architecture.',
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'VP of Data Governance',
-      bio: 'Certified data governance professional with extensive regulatory compliance experience.',
-    },
-    {
-      name: 'David Thompson',
-      role: 'VP of Analytics',
-      bio: 'Data scientist and analytics leader with focus on predictive modeling and ML.',
+      description: 'Transparent advice. If a technology isn\'t right for you, we\'ll tell you, even if it costs us a sale.',
     },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-            <section className="bg-gradient-to-br from-primary-100 to-primary-200 text-gray-800 py-20">
-        <div className="container">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">About Via New</h1>
-            <p className="text-xl text-gray-600">
-              We deliver value via new path - data driven and AI embedded in process workflows. 
-              Transform your business with intelligent automation and strategic data solutions.
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gray-50 border-b border-gray-100">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <span className="section-subtitle">Our Story</span>
+            <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+              Architecting the <br />
+              <span className="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+                Data-Driven Future
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto mb-10">
+              Vian Technologies was founded with a single mission: to provide the architectural clarity and
+              governance rigor needed for the AI era.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Corporate Info Grid */}
+      <section className="py-12 bg-white -mt-10 relative z-20">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {corporateInfo.map((info, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex items-center space-x-4"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+                  <info.icon size={24} />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold">{info.label}</p>
+                  <p className="text-gray-900 font-medium text-sm md:text-base">{info.value}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="card">
-              <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-              <p className="text-gray-600">
-                To empower organizations with the tools, strategies, and expertise needed 
-                to harness the full potential of their data assets. We believe that data-driven 
-                decision making is the key to sustainable competitive advantage in today's 
-                digital economy.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="section-subtitle">Our Purpose</span>
+              <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
+                Bridging Strategy and Execution
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Too many data initiatives fail because of a disconnect between high-level strategy and on-the-ground engineering.
+                Vianew bridges this gap. We don't just draw diagrams; we design executeable blueprints that your engineering
+                teams can build upon.
               </p>
-            </div>
-            <div className="card">
-              <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-              <p className="text-gray-600">
-                To be the world's most trusted partner for data transformation initiatives, 
-                known for our expertise, integrity, and measurable impact on our clients' 
-                success. We envision a future where every organization can confidently 
-                leverage data to drive innovation and growth.
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Whether you are migrating to the cloud, decoupling a legacy ERP, or preparing for Generative AI,
+                our focus is always on modularity, scalability, and long-term value.
               </p>
+            </motion.div>
+
+            <div className="grid gap-6">
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="p-8 rounded-2xl bg-gray-50 border border-gray-100"
+              >
+                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3">Our Mission</h3>
+                <p className="text-gray-600">
+                  To empower enterprises with the architectural blueprints and governance frameworks needed to survive and thrive in the AI age.
+                </p>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm"
+              >
+                <h3 className="text-2xl font-serif font-bold text-gray-900 mb-3">Our Vision</h3>
+                <p className="text-gray-600">
+                  A world where data complexity is tamed, and every organization has the clarity to innovate without fear.
+                </p>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-gray-50">
+      {/* Values Section */}
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide our work and define our culture
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <p className="text-xl text-gray-600 font-light">
+              The principles that guide every audit, blueprint, and advisory session.
             </p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, idx) => (
-              <div key={idx} className="card bg-white text-center">
-                <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="text-primary-600" size={32} />
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gray-50 text-gray-900 flex items-center justify-center mb-6">
+                  <value.icon size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed">{value.description}</p>
+              </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Meet the experts driving our vision forward
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {team.map((member, idx) => (
-              <div key={idx} className="card bg-gray-50">
-                <div className="bg-gradient-to-br from-primary-600 to-primary-800 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl font-bold">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-center mb-2">{member.name}</h3>
-                <p className="text-primary-600 text-center font-semibold mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm text-center">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-20 bg-gradient-to-br from-primary-600 to-primary-900 text-white">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-2">10+</div>
-              <div className="text-blue-100">Years of Experience</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Clients Served</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-blue-100">Expert Consultants</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">98%</div>
-              <div className="text-blue-100">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">Join Us on Your Data Journey</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Let's work together to transform your organization into a data-driven enterprise.
-            </p>
-            <Link href="/contact" className="btn-primary inline-flex items-center">
-              Get Started Today
-              <FiArrowRight className="ml-2" />
-            </Link>
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
 
+export default AboutPage;
